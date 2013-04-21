@@ -14,6 +14,10 @@ Rottenpotatoes::Application.routes.draw do
   #   resources :products
   resources :movies
 
+  #hw4 changes
+  get '/movies/:id/find_by_same_director' => "movies#find_by_same_director", :as=>:find_by_same_director
+  
+  #end hw4
   # Sample resource route with options:
   #   resources :products do
   #     member do

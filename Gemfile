@@ -6,9 +6,15 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 # for Heroku deployment - as described in Ap. A of ELLS book
-group :development, :test do
+group :development do
   gem 'sqlite3'
-  gem 'ruby-debug19', :require => 'ruby-debug'
+#  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'database_cleaner'
+end
+
+group :test do
+  gem 'sqlite3'
+#  gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'cucumber-rails'
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
@@ -16,7 +22,9 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'autotest-rails' 
 end
+
 group :production do
   gem 'pg'
 end
