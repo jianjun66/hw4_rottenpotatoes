@@ -9,13 +9,13 @@ Rottenpotatoes::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
+  #hw4 changes
+  get '/movies/find_by_same_director' => "movies#find_by_same_director", :as=>:find_by_same_director
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :movies
 
-  #hw4 changes
-  get '/movies/:id/find_by_same_director' => "movies#find_by_same_director", :as=>:find_by_same_director
   
   #end hw4
   # Sample resource route with options:
