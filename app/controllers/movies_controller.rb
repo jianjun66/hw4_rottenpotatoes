@@ -66,10 +66,14 @@ class MoviesController < ApplicationController
 
   def find_by_same_director
     src_id = params[:id]
-    m = Movie.find_by_id(src_id)  
-    @movies = Movie.where("id != ? and director = ?", src_id, m.director )
-    if @movies == nil || @movies.length == 0
+    m = Movie.find_by_id(src_id)
+    if ( m==nil)
       redirect_to movies_path
-    end  
+    else
+      @movies = Movie.where("id != ? and director = ?", src_id, m.director )
+      if @movies == nil || @movies.length == 0
+        redirect_to movies_path
+      end
+    end
   end    
 end
